@@ -1,6 +1,6 @@
 import pandas as pd
 import joblib
-from sklearn.linear_model import LinearRegression # <-- ARTIK BU ALGORİTMAYI KULLANIYORUZ
+from sklearn.linear_model import LinearRegression 
 
 print("Veriler yükleniyor...")
 df = pd.read_csv('temiz_film_verisi.csv')
