@@ -1,0 +1,11 @@
+# Veri Setleri
+*.csv
+
+# Python Sistem Dosyaları
+__pycache__/
+*.pyc
+
+# Sanal Ortamlar
+venv/
+env/
+.env
