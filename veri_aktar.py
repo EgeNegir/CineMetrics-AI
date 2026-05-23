@@ -1,14 +1,14 @@
 import pandas as pd
 from sqlalchemy import create_engine, text
 
-# 1. Veritabanı bağlantımızı kuruyoruz (Şifreni buraya tekrar yaz)
+# 1. Veritabanı bağlantı
 engine = create_engine('postgresql://postgres:senin_sifren@localhost:5432/imdb_proje')
 
-# 2. Dosya yolların (Aynı kalacak)
+# 2. Dosya yolları
 movies_path = r"C:\Users\Ege\Desktop\IMDb_yapayzeka\archive\tmdb_5000_movies.csv"
 credits_path = r"C:\Users\Ege\Desktop\IMDb_yapayzeka\archive\tmdb_5000_credits.csv"
 
-# 3. YENİ EKLENEN KISIM: Eski hatalı tabloları birbirine olan bağlarıyla (CASCADE) birlikte zorla siliyoruz
+# 3. Eski hatalı tabloları birbirine olan bağlarıyla (CASCADE) birlikte zorla siliyoruz
 print("Eski tablolar ve Foreign Key bağları temizleniyor...")
 with engine.connect() as conn:
     conn.execute(text("DROP TABLE IF EXISTS credits, movies CASCADE;"))
